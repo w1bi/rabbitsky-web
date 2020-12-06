@@ -20,22 +20,26 @@ var Config = function() {
             if(this.status == 200) {
                 var obj = JSON.parse(this.responseText);
 
-                if(typeof obj.embed !== 'undefined') {
-                    if(typeof obj.embed.type !== 'undefined') {
-                        that.embed.type = obj.embed.type
+                if(obj.open) {
+                    if(typeof obj.embed !== 'undefined') {
+                        if(typeof obj.embed.type !== 'undefined') {
+                            that.embed.type = obj.embed.type
+                        }
+
+                        if(typeof obj.embed.id !== 'undefined') {
+                            that.embed.id = obj.embed.id
+                        }
+
+                        if(typeof obj.embed.chat !== 'undefined') {
+                            that.embed.chat = obj.embed.chat;
+                        }
                     }
 
-                    if(typeof obj.embed.id !== 'undefined') {
-                        that.embed.id = obj.embed.id
+                    if(typeof obj.servers !== 'undefined') {
+                        that.servers = obj.servers;
                     }
-
-                    if(typeof obj.embed.chat !== 'undefined') {
-                        that.embed.chat = obj.embed.chat;
-                    }
-                }
-
-                if(typeof obj.servers !== 'undefined') {
-                    that.servers = obj.servers;
+                } else {
+                    that.error = "Gate is closed!";
                 }
             } else {
                 that.error = "Invalid Status Return: " + this.status;

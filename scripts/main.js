@@ -131,9 +131,8 @@ function checkReady(num) {
 
                     checkReady(num+1);
                 } else {
-                    console.error(checkError);
                     document.getElementById("loading-progress-square").classList.add("none");
-                    loadingDom.innerHTML = "Failed to load configurations. Please try again later.";
+                    loadingDom.innerHTML = "<div class=\"text-center\">" + checkError + "<br /><br />Please try again later.</div>";
                 }
             }
             break;
