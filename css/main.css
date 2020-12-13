@@ -158,6 +158,17 @@ div, label, a {
     text-align: center;
 }
 
+#main-menu #main-menu-logo #rsvp-logo {
+    background-image: url("../images/logo-menu.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 90px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 500px) {
     #main-menu #main-menu-logo #rabbit-sky-logo {
         font-size: 29px;
