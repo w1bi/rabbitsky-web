@@ -22,7 +22,7 @@ var YouTubeLive = function(ytid) {
     }
 
     this.player;
-    this.volume = 25;
+    this.volume = 50;
     this.muted = false;
 
     this.domElement = document.createElement( 'div' );
